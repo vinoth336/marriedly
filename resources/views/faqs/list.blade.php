@@ -2,22 +2,15 @@
 
 @section('content')
 
+<link rel="stylesheet" href="{{ asset('web/css/draganddrop.css') }}" type="text/css" />
+    <script src="{{ asset('web/js/draganddrop.js') }}"></script>
     <script>
         $(document).ready(function() {
             $("#sortable")
                 .sortable({
-                    axis: "y",
-                    handle: "div",
-                    stop: function(event, ui) {
-                        // IE doesn't register the blur when sorting
-                        // so trigger focusout handlers to remove .ui-state-focus
-                        ui.item.children("div").triggerHandler("focusout");
-
-                        // Refresh accordion to handle new order
-                        $(this).accordion("refresh");
-                    }
+                    handle: '.hand',
+                    group: true
                 })
-            $("#sortable").disableSelection();
         });
 
     </script>
@@ -50,12 +43,13 @@
                                 @endif
 
 
-                                <div class="accordion" id="sortable">
-                                    <div class="card">
+                                <ul class="accordion" id="sortable">
+                                    <li class="card">
                                         <div class="card-header" id="headingOne">
                                             <h5 class="mb-0" data-toggle="collapse"
                                                     data-target="#collapseOne" aria-expanded="true"
-                                                    aria-controls="collapseOne">                                                
+                                                    aria-controls="collapseOne">
+                                                    <a class="hand"><b>Handle</b></a>
                                                     Collapsible Group Item #1
                                             </h5>
                                         </div>
@@ -74,12 +68,13 @@
                                                 sustainable VHS.
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="card">
+                                    </li>
+                                    <li class="card">
                                         <div class="card-header" id="headingTwo">
                                             <h5 class="mb-0" data-toggle="collapse"
                                                     data-target="#collapseTwo" aria-expanded="false"
                                                     aria-controls="collapseTwo">
+                                                    <a class="hand"><b>Handle</b></a>
                                                         Collapsible Group Item #2
                                             </h5>
                                         </div>
@@ -97,12 +92,13 @@
                                                 sustainable VHS.
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="card">
+                                    </li>
+                                    <li class="card">
                                         <div class="card-header" id="headingThree">
                                             <h5 class="mb-0" data-toggle="collapse"
                                                     data-target="#collapseThree" aria-expanded="false"
                                                     aria-controls="collapseThree">
+                                                    <a class="hand"><b>Handle</b></a>
                                                         Collapsible Group Item #3
                                             </h5>
                                         </div>
@@ -120,8 +116,8 @@
                                                 sustainable VHS.
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
+                                    </li>
+                                </ul>
                             </div>
                             <div class="card-footer ml-auto mr-auto">
                                 <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
