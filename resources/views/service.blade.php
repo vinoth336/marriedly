@@ -133,7 +133,8 @@
 
 
                         <section id="slider" class="slider-element">
-                            <div class="masonry-thumbs grid-container grid-6" data-big="3" data-lightbox="gallery">
+                            <div class="w-100 mb-5 portfolio-single-image masonry-thumbs grid-container grid-3"
+                            data-big="3" data-lightbox="gallery">
                                 <a class="grid-item" href="{{  asset('web/images/banner/banner1.jpg') }}" data-lightbox="gallery-item">
                                     <div class="grid-inner">
                                         <img src="{{  asset('web/images/banner/banner1.jpg') }}" alt="Gallery Thumb 1">
