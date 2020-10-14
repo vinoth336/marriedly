@@ -1,109 +1,5 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="author" content="Marriedly" />
-
-	<link
-		href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&amp;display=swap"
-        rel="stylesheet" type="text/css" />
-
-    <link rel="stylesheet" href="{{ asset('web/style.css') }}" type="text/css" />
-	<link rel="stylesheet" href="{{ asset('web/css/bootstrap.css') }} " type="text/css" />
-	<link rel="stylesheet" href="{{ asset('web/css/dark.css') }}" type="text/css" />
-	<link rel="stylesheet" href="{{ asset('web/css/font-icons.css') }}" type="text/css" />
-	<link rel="stylesheet" href="{{ asset('web/css/animate.css') }}" type="text/css" />
-	<link rel="stylesheet" href="{{ asset('web/css/magnific-popup.css') }}" type="text/css" />
-	<link rel="stylesheet" href="{{ asset('web/css/custom.css') }}" type="text/css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="{{ asset('web/css/swiper.css') }}" type="text/css" />
-	<link rel="stylesheet" type="text/css" href="{{ asset('web/include/rs-plugin/css/settings.css') }}" media="screen" />
-	<link rel="stylesheet" type="text/css" href="{{ asset('web/include/rs-plugin/css/layers.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('web/include/rs-plugin/css/navigation.css') }}">
-
-	<title>Marriedly - Wedding Planner</title>
-</head>
-
-<body class="stretched">
-
-	<div id="wrapper" class="clearfix">
-
-		<header id="header" class="full-header" data-sticky-logo-height="74" data-menu-padding="32">
-			<div id="header-wrap">
-				<div class="container">
-					<div class="header-row">
-
-						<div id="logo" style="background-color: #1abc9c;">
-							<a href="index.html" class="standard-logo"
-								data-dark-logo="{{ asset('web/images/site_images/logo2.png') }}"><img src="{{ asset('web/images/site_images/logo2.png') }}"
-									alt="{{ config('app.name') }}" style="width: 126px;height: 30px;"></a>
-							<a href="index.html" class="retina-logo" data-dark-logo="{{ asset('web/images/site_images/logo2.png') }}"><img
-									src="{{ asset('web/images/site_images/logo2.png') }}" alt="{{ config('app.name') }}"></a>
-						</div>
-						<div class="header-misc">
-
-						</div>
-						<div id="primary-menu-trigger">
-							<svg class="svg-trigger" viewBox="0 0 100 100">
-								<path
-									d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20">
-								</path>
-								<path d="m 30,50 h 40"></path>
-								<path
-									d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20">
-								</path>
-							</svg>
-						</div>
-
-
-						<nav class="primary-menu sub-title">
-							<ul class="menu-container">
-								<li class="menu-item">
-									<a class="menu-link" href="index.html">
-										<div>Home</div>
-									</a>
-								</li>
-								<li class="menu-item">
-									<a class="menu-link" href="#">
-										<div>Services</div>
-									</a>
-									<ul class="sub-menu-container">
-										<li class="menu-item">
-											<a class="menu-link" href="rs-demos.html">
-												<div>Premium Templates</div>
-											</a>
-										</li>
-									</ul>
-								</li>
-								<li class="menu-item mega-menu">
-									<a class="menu-link" href="#">
-										<div>Portfolio</div>
-									</a>
-								</li>
-								<li class="menu-item mega-menu">
-									<a class="menu-link" href="#">
-										<div>Testimonails</div>
-									</a>
-								</li>
-								<li class="menu-item mega-menu">
-									<a class="menu-link" href="#">
-										<div>Contact Us</div>
-									</a>
-								</li>
-								<li class="menu-item mega-menu">
-									<a class="menu-link" href="#">
-										<div>Blog</div>
-									</a>
-								</li>
-							</ul>
-						</nav>
-					</div>
-				</div>
-			</div>
-			<div class="header-wrap-clone"></div>
-		</header>
-
+@extends('site.app')
+@section('content')
 		<section id="slider"
 			class="slider-element slider-parallax swiper_wrapper min-vh-60 min-vh-md-100 include-header"
 			data-autoplay="5000" data-speed="650" data-loop="true"
@@ -614,43 +510,8 @@
 						<div class="video-overlay" style="background-color: rgba(0,0,0,0.3);"></div>
 					</div>
 				</div>
-				<div class="line" style="padding: 20px 0; margin:20px 0;"></div>
-				<div class="container clearfix">
-					<div class="row align-items-center gutter-40 col-mb-50">
-						<div class="col-md-5">
-							<img data-animate="fadeInLeftBig" src="{{  asset('web/images/banner/banner11.jpg') }}" alt="Imac">
-						</div>
-						<div class="col-md-7">
-							<div class="heading-block">
-								<h2>Marriedly Wedding Planner</h2>
-								<span>Fabulously Sharp &amp; Intuitive on your HD Devices.</span>
-							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus deserunt, nobis quae
-								eos provident quidem. Quaerat expedita dignissimos perferendis, nihil quo distinctio
-								eius architecto reprehenderit maiores.</p>
-						</div>
-					</div>
-					<div class="line"></div>
-				</div>
-				<div class="container clearfix">
-					<div class="row align-items-center gutter-40 col-mb-50">
-						<div class="col-md-7">
-							<div class="heading-block">
-								<h2>Marriedly Wedding Planner</h2>
-								<span>Fabulously Sharp &amp; Intuitive on your HD Devices.</span>
-							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus deserunt, nobis quae
-								eos provident quidem. Quaerat expedita dignissimos perferendis, nihil quo distinctio
-								eius architecto reprehenderit maiores.</p>
-
-						</div>
-						<div class="col-md-5">
-							<img data-animate="fadeInRightBig" src="{{  asset('web/images/banner/banner11.jpg') }}" alt="Imac">
-						</div>
-					</div>
-					<div class="line"></div>
-				</div>
-				<div class="row bottommargin-lg align-items-stretch">
+				<div class="line" style="padding: 20px 0; margin: 20px 0"></div>
+				<div class="row bottommargin-lg align-items-stretch" >
 					<div class="col-lg-4 dark col-padding overflow-hidden" style="background-color: #1abc9c;">
 						<div>
 							<h3 class="text-uppercase" style="font-weight: 600;">Why choose Us</h3>
@@ -686,7 +547,7 @@
 					</div>
 					<div class="clear"></div>
 				</div>
-				<div class="container clearfix">
+				<div class="container clearfix" >
 					<div class="row col-mb-50">
 						<div class="col-lg-8">
 							<div class="fancy-title title-border">
@@ -755,73 +616,21 @@
 							</div>
 
 						</div>
-						<div class="col-lg-4">
-							<div class="fancy-title title-border">
-								<h4>Client Testimonials</h4>
-							</div>
-							<div class="fslider testimonial p-0 border-0 shadow-none" data-animation="slide"
-								data-arrows="false">
-								<div class="flexslider">
-									<div class="slider-wrap">
-										<div class="slide">
-											<div class="testi-image">
-												<a href="#"><img src="{{  asset('web/images/testimonials/3.jpg') }}"
-														alt="Customer Testimonails"></a>
-											</div>
-											<div class="testi-content">
-												<p>Similique fugit repellendus expedita excepturi iure perferendis
-													provident quia eaque. Repellendus, vero numquam?</p>
-												<div class="testi-meta">
-													Steve Jobs
-													<span>Apple Inc.</span>
-												</div>
-											</div>
-										</div>
-										<div class="slide">
-											<div class="testi-image">
-												<a href="#"><img src="{{  asset('web/images/testimonials/2.jpg') }}"
-														alt="Customer Testimonails"></a>
-											</div>
-											<div class="testi-content">
-												<p>Natus voluptatum enim quod necessitatibus quis expedita harum
-													provident eos obcaecati id culpa corporis molestias.</p>
-												<div class="testi-meta">
-													Collis Ta'eed
-													<span>Envato Inc.</span>
-												</div>
-											</div>
-										</div>
-										<div class="slide">
-											<div class="testi-image">
-												<a href="#"><img src="{{  asset('web/images/testimonials/1.jpg') }}"
-														alt="Customer Testimonails"></a>
-											</div>
-											<div class="testi-content">
-												<p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur
-													ullam quibusdam cum libero illo rerum!</p>
-												<div class="testi-meta">
-													John Doe
-													<span>XYZ Inc.</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-						</div>
+                        <div class="col-lg-4">
+                            <div id="instagram" class="widget">
+                                <h4 class="highlight-me">Instagram Photos</h4>
+                                <div id="instagram-photos" class="instagram-photos masonry-thumbs grid-container grid-4 customjs" data-user="marriedly_wedding_planner"></div>
+                                </div>
+                        </div>
 					</div>
 				</div>
-
-
 			</div>
 		</section>
 
-		<section id="content">
-			<div class="content-wrap">
+		<section id="content" >
+			<div id="contact_us" class="content-wrap " style="padding-top: 0px">
 				<div class="container clearfix">
 					<div class="row align-items-stretch col-mb-50 mb-0">
-
 						<div class="col-lg-6">
 							<div class="fancy-title title-border">
 								<h3>Send us an Email</h3>
@@ -931,17 +740,17 @@
 							<div class="col-sm-6 col-lg-3">
 								<div class="feature-box fbox-center fbox-bg fbox-plain">
 									<div class="fbox-icon">
-										<a href="#"><i class="icon-skype2"></i></a>
+										<a href="#"><i class="icon-instagram"></i></a>
 									</div>
 									<div class="fbox-content">
-										<h3>Make a Video Call<span class="subtitle">CanvasOnSkype</span></h3>
+										<h3>Follow<span class="subtitle">Us</span></h3>
 									</div>
 								</div>
 							</div>
 							<div class="col-sm-6 col-lg-3">
 								<div class="feature-box fbox-center fbox-bg fbox-plain">
 									<div class="fbox-icon">
-										<a href="#"><i class="icon-twitter2"></i></a>
+										<a href="#"><i class="icon-facebook2"></i></a>
 									</div>
 									<div class="fbox-content">
 										<h3>Follow on Twitter<span class="subtitle">2.3M Followers</span></h3>
@@ -952,69 +761,5 @@
 					</div>
 				</div>
 		</section>
-		<footer id="footer" class="dark">
-			<div id="copyrights">
-				<div class="container">
-					<div class="row col-mb-30">
-						<div class="col-md-6 text-center text-md-left">
-							Copyrights &copy; 2020 All Rights Reserved by Canvas Inc.<br>
-							<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a>
-							</div>
-						</div>
-						<div class="col-md-6 text-center text-md-right">
-							<div class="d-flex justify-content-center justify-content-md-end">
-								<a href="#" class="social-icon si-small si-borderless si-facebook">
-									<i class="icon-facebook"></i>
-									<i class="icon-facebook"></i>
-								</a>
-								<a href="#" class="social-icon si-small si-borderless si-twitter">
-									<i class="icon-twitter"></i>
-									<i class="icon-twitter"></i>
-								</a>
-								<a href="#" class="social-icon si-small si-borderless si-gplus">
-									<i class="icon-gplus"></i>
-									<i class="icon-gplus"></i>
-								</a>
-								<a href="#" class="social-icon si-small si-borderless si-pinterest">
-									<i class="icon-pinterest"></i>
-									<i class="icon-pinterest"></i>
-								</a>
-								<a href="#" class="social-icon si-small si-borderless si-vimeo">
-									<i class="icon-vimeo"></i>
-									<i class="icon-vimeo"></i>
-								</a>
-								<a href="#" class="social-icon si-small si-borderless si-github">
-									<i class="icon-github"></i>
-									<i class="icon-github"></i>
-								</a>
-								<a href="#" class="social-icon si-small si-borderless si-yahoo">
-									<i class="icon-yahoo"></i>
-									<i class="icon-yahoo"></i>
-								</a>
-								<a href="#" class="social-icon si-small si-borderless si-linkedin">
-									<i class="icon-linkedin"></i>
-									<i class="icon-linkedin"></i>
-								</a>
-							</div>
-							<div class="clear"></div>
-							<i class="icon-envelope2"></i> <a
-								href="http://themes.semicolonweb.com/cdn-cgi/l/email-protection" class="__cf_email__"
-								data-cfemail="7d14131b123d1e1c130b1c0e531e1210">[email&#160;protected]</a> <span
-								class="middot">&middot;</span> <i class="icon-headphones"></i> +1-11-6541-6369 <span
-								class="middot">&middot;</span> <i class="icon-skype2"></i> CanvasOnSkype
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
-	</div>
-
-	<div id="gotoTop" class="icon-angle-up"></div>
-	<script src="{{  asset('web/js/jquery.js') }}"></script>
-	<script src="{{  asset('web/js/plugins.min.js') }}"></script>
-	<script src="{{  asset('web/js/functions.js') }}"></script>
-</body>
-
-<!-- Mirrored from themes.semicolonweb.com/html/canvas/index-corporate.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Jun 2020 02:50:35 GMT -->
-
-</html>
+@endsection		
+		
