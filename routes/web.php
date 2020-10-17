@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'SiteController@index')->name('home');
 Route::get('/service/{service?}', 'SiteController@services')->name('service');
 Route::get('/portfolio/', 'SiteController@portfolio')->name('portfolio');
+Route::get('/faqs/', 'SiteController@faqs')->name('faqs');
 
 
 Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');

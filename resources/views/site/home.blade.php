@@ -723,7 +723,7 @@
 										<a href="#"><i class="icon-map-marker2"></i></a>
 									</div>
 									<div class="fbox-content">
-										<h3>Get Direction<span class="subtitle">Check in Google Map</span></h3>
+										<h3>Get Direction<span class="subtitle">Check In<br>Google Map</span></h3>
 									</div>
 								</div>
 							</div>
@@ -733,7 +733,7 @@
 										<a href="#"><i class="icon-phone3"></i></a>
 									</div>
 									<div class="fbox-content">
-										<h3>Speak to Us<span class="subtitle">(123) 456 7890</span></h3>
+										<h3>Speak to<br> Us<span class="subtitle">(+91)9092780007</span></h3>
 									</div>
 								</div>
 							</div>
@@ -743,7 +743,7 @@
 										<a href="#"><i class="icon-instagram"></i></a>
 									</div>
 									<div class="fbox-content">
-										<h3>Follow<span class="subtitle">Us</span></h3>
+										<h3>Follow<br>Us<span class="subtitle">2.3M Followers</span></h3>
 									</div>
 								</div>
 							</div>
@@ -753,13 +753,25 @@
 										<a href="#"><i class="icon-facebook2"></i></a>
 									</div>
 									<div class="fbox-content">
-										<h3>Follow on Twitter<span class="subtitle">2.3M Followers</span></h3>
+										<h3>Follow<br>Us<span class="subtitle">2.3M Followers</span></h3>
 									</div>
 								</div>
 							</div>
+							<div class="col-sm-6 col-lg-3 " style="display:none">
+								<div class="feature-box fbox-center fbox-bg fbox-plain">
+									<div class="fbox-icon">
+										<a href="#"><i class="icon-facebook2"></i></a>
+									</div>
+									<div class="fbox-content">
+										<h3>Follow<br>Us<span class="subtitle">2.3M Followers</span></h3>
+									</div>
+								</div>
+							</div>
+							
 						</div>
 					</div>
 				</div>
+			</div>	
 		</section>
 @endsection		
 		

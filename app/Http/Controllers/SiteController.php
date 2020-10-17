@@ -43,6 +43,11 @@ class SiteController extends Controller
 
     }
 
+    public function faqs()
+    {
+        return view('site.faqs');
+    }
+
     public function saveEnquiry()
     {
 
