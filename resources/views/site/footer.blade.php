@@ -32,7 +32,7 @@
 <script src="{{  asset('web/js/jquery.js') }}"></script>
 <script src="{{  asset('web/js/plugins.min.js') }}"></script>
 <script src="{{  asset('web/js/functions.js') }}"></script>
-<a href="https://api.whatsapp.com/send?phone=9092780007&text=Hi Marriedly," class="float" target="_blank">
+<a href="https://wa.me/919092780007?text=Hi Marriedly," class="float" target="_blank">
 <i class="fa icon-whatsapp my-float"></i>
 </a>
 
