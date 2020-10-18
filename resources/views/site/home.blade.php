@@ -63,7 +63,7 @@
 
 					<div class="row justify-content-center col-mb-10">
 						<div class="col-sm-6 col-lg-4">
-							<div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn">
+							<div class="feature-box fbox-sm fbox-plain" >
 								<div class="fbox-icon">
 									<a href="{{ route('service','decor') }}"><i class="icon-check-empty"></i></a>
 								</div>
@@ -75,7 +75,7 @@
 							</div>
 						</div>
 						<div class="col-sm-6 col-lg-4">
-							<div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn" data-delay="200">
+							<div class="feature-box fbox-sm fbox-plain"  data-delay="200">
 								<div class="fbox-icon">
 									<a href="#"><i class="icon-address-card"></i></a>
 								</div>
@@ -87,7 +87,7 @@
 							</div>
 						</div>
 						<div class="col-sm-6 col-lg-4">
-							<div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn" data-delay="400">
+							<div class="feature-box fbox-sm fbox-plain"  data-delay="400">
 								<div class="fbox-icon">
 									<a href="#"><i class="icon-star2"></i></a>
 								</div>
@@ -99,7 +99,7 @@
 							</div>
 						</div>
 						<div class="col-sm-6 col-lg-4">
-							<div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn" data-delay="600">
+							<div class="feature-box fbox-sm fbox-plain"  data-delay="600">
 								<div class="fbox-icon">
 									<a href="#"><i class="icon-video"></i></a>
 								</div>
@@ -111,7 +111,7 @@
 							</div>
 						</div>
 						<div class="col-sm-6 col-lg-4">
-							<div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn" data-delay="800">
+							<div class="feature-box fbox-sm fbox-plain"  data-delay="800">
 								<div class="fbox-icon">
 									<a href="#"><i class="icon-car"></i></a>
 								</div>
@@ -123,7 +123,7 @@
 							</div>
 						</div>
 						<div class="col-sm-6 col-lg-4">
-							<div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn" data-delay="1000">
+							<div class="feature-box fbox-sm fbox-plain"  data-delay="1000">
 								<div class="fbox-icon">
 									<a href="#"><i class="icon-compact-disc"></i></a>
 								</div>
@@ -135,7 +135,7 @@
 							</div>
 						</div>
 						<div class="col-sm-6 col-lg-4">
-							<div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn" data-delay="1200">
+							<div class="feature-box fbox-sm fbox-plain"  data-delay="1200">
 								<div class="fbox-icon">
 									<a href="#"><i class="icon-bullhorn"></i></a>
 								</div>
@@ -147,7 +147,7 @@
 							</div>
 						</div>
 						<div class="col-sm-6 col-lg-4">
-							<div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn" data-delay="1400">
+							<div class="feature-box fbox-sm fbox-plain"  data-delay="1400">
 								<div class="fbox-icon">
 									<a href="#"><i class="icon-bell-alt"></i></a>
 								</div>
@@ -159,7 +159,7 @@
 							</div>
 						</div>
 						<div class="col-sm-6 col-lg-4">
-							<div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn" data-delay="1600">
+							<div class="feature-box fbox-sm fbox-plain"  data-delay="1600">
 								<div class="fbox-icon">
 									<a href="#"><i class="icon-leaf"></i></a>
 								</div>
@@ -189,7 +189,7 @@
 					<div class="container clearfix">
 						<div class="row justify-content-center col-mb-10">
 							<div class="col-sm-6 col-lg-4">
-								<div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn">
+								<div class="feature-box fbox-sm fbox-plain" >
 									<div class="fbox-icon">
 										<a href="#"><i class="icon-phone2"></i></a>
 									</div>
@@ -202,7 +202,7 @@
 								</div>
 							</div>
 							<div class="col-sm-6 col-lg-4">
-								<div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn" data-delay="200">
+								<div class="feature-box fbox-sm fbox-plain"  data-delay="200">
 									<div class="fbox-icon">
 										<a href="#"><i class="icon-eye"></i></a>
 									</div>
@@ -214,7 +214,7 @@
 								</div>
 							</div>
 							<div class="col-sm-6 col-lg-4">
-								<div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn" data-delay="400">
+								<div class="feature-box fbox-sm fbox-plain"  data-delay="400">
 									<div class="fbox-icon">
 										<a href="#"><i class="icon-star2"></i></a>
 									</div>
@@ -226,7 +226,7 @@
 								</div>
 							</div>
 							<div class="col-sm-6 col-lg-4">
-								<div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn" data-delay="600">
+								<div class="feature-box fbox-sm fbox-plain"  data-delay="600">
 									<div class="fbox-icon">
 										<a href="#"><i class="icon-video"></i></a>
 									</div>
@@ -239,7 +239,7 @@
 								</div>
 							</div>
 							<div class="col-sm-6 col-lg-4">
-								<div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn" data-delay="800">
+								<div class="feature-box fbox-sm fbox-plain"  data-delay="800">
 									<div class="fbox-icon">
 										<a href="#"><i class="icon-params"></i></a>
 									</div>
@@ -251,7 +251,7 @@
 								</div>
 							</div>
 							<div class="col-sm-6 col-lg-4">
-								<div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn" data-delay="1000">
+								<div class="feature-box fbox-sm fbox-plain"  data-delay="1000">
 									<div class="fbox-icon">
 										<a href="#"><i class="icon-fire"></i></a>
 									</div>
@@ -264,7 +264,7 @@
 								</div>
 							</div>
 							<div class="col-sm-6 col-lg-4">
-								<div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn" data-delay="1200">
+								<div class="feature-box fbox-sm fbox-plain"  data-delay="1200">
 									<div class="fbox-icon">
 										<a href="#"><i class="icon-bulb"></i></a>
 									</div>
@@ -277,7 +277,7 @@
 								</div>
 							</div>
 							<div class="col-sm-6 col-lg-4">
-								<div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn" data-delay="1400">
+								<div class="feature-box fbox-sm fbox-plain"  data-delay="1400">
 									<div class="fbox-icon">
 										<a href="#"><i class="icon-heart2"></i></a>
 									</div>
@@ -289,7 +289,7 @@
 								</div>
 							</div>
 							<div class="col-sm-6 col-lg-4">
-								<div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn" data-delay="1600">
+								<div class="feature-box fbox-sm fbox-plain"  data-delay="1600">
 									<div class="fbox-icon">
 										<a href="#"><i class="icon-note"></i></a>
 									</div>

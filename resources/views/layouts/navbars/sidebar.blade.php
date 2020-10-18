@@ -1,4 +1,4 @@
-<div class="sidebar" data-color="orange" data-background-color="white" data-image="{{ asset('material') }}/web/images/banner/banner1.jpg">
+<div class="sidebar" data-color="orange" data-background-color="black" data-image="{{ asset('material') }}/img/banner13.jpg">
   <!--
       Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -6,7 +6,7 @@
   -->
   <div class="logo">
     <a target="_blank" href="{{ config('app.url') }}" class="simple-text logo-normal">
-      {{ __('Marriedly') }}
+      {{ __('Marriedly') }}<br>
     </a>
   </div>
   
