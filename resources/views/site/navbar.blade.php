@@ -22,7 +22,7 @@
 			</a>
 		</li>
 		<li class="menu-item mega-menu">
-			<a class="menu-link" href="{{ route('faqs') }}">
+			<a class="menu-link" href="{{ route('site_faqs') }}">
 				<div>Faqs</div>
 			</a>
 		</li>

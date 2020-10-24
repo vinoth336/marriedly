@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Faqs;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FaqsController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +18,10 @@ class FaqsController extends Controller
      */
     public function index()
     {
-        return view('faqs.list');
+
+        $faqs = Faqs::OrderBy('sequence')->get();
+
+        return view('faqs.list', ['faqs' => $faqs]);
     }
 
     /**
@@ -24,7 +31,7 @@ class FaqsController extends Controller
      */
     public function create()
     {
-        //
+        return view('faqs.create');
     }
 
     /**
@@ -35,7 +42,15 @@ class FaqsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $faq = new Faqs();
+        $faq->question = $request->input('question');
+        $faq->answer = $request->input('answer');
+        $faq->sequence = Faqs::get()->count();
+        $faq->save();
+
+        return redirect()->route('faqs.index')->with('status', 'Created Successfully');
+
     }
 
     /**
@@ -55,9 +70,9 @@ class FaqsController extends Controller
      * @param  \App\Faqs  $faqs
      * @return \Illuminate\Http\Response
      */
-    public function edit(Faqs $faqs)
+    public function edit(Faqs $faq)
     {
-        //
+        return view('faqs.edit')->with(['faq' => $faq]);
     }
 
     /**
@@ -67,9 +82,15 @@ class FaqsController extends Controller
      * @param  \App\Faqs  $faqs
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Faqs $faqs)
+    public function update(Request $request, Faqs $faq)
     {
-        //
+        $faq->question = $request->input('question');
+        $faq->answer = $request->input('answer');
+        $faq->sequence = Faqs::get()->count();
+        $faq->save();
+
+        return redirect()->route('faqs.index')->with('status', 'Created Successfully');
+
     }
 
     /**
@@ -78,8 +99,39 @@ class FaqsController extends Controller
      * @param  \App\Faqs  $faqs
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Faqs $faqs)
+    public function destroy(Faqs $faq)
     {
-        //
+        $faq->delete();
+
+        return redirect()->route('faqs.index')->with('status', 'Removed Successfully');
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Faqs  $faqs
+     * @return \Illuminate\Http\Response
+     */
+    public function updateSequence(Request $request)
+    {
+
+        DB::beginTransaction();
+
+        try
+        {
+            foreach($request->input('sequence') as $sequence => $id) {
+                $faq = Faqs::find($id);
+                $faq->sequence = $sequence + 1;
+                $faq->save();
+            }
+        } catch(Exception $e) {
+            DB::rollback();
+            response('Cannot Update Sequence', 500);
+        }
+
+        DB::commit();
+
+        return response(['message' => 'Updated Successfully'], 200);
     }
 }

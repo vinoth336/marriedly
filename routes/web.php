@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'SiteController@index')->name('home');
 Route::get('/service/{service?}', 'SiteController@services')->name('service');
 Route::get('/portfolio/', 'SiteController@portfolio')->name('portfolio');
-Route::get('/faqs/', 'SiteController@faqs')->name('faqs');
+Route::get('/faqs/', 'SiteController@faqs')->name('site_faqs');
 
 
 Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -30,7 +30,7 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
 Route::get('/home', 'HomeController@index')->name('dashboard')->middleware('auth');
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group([ 'prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('table-list', function () {
         return view('pages.table_list');
     })->name('table');
@@ -63,7 +63,14 @@ Route::group(['middleware' => 'auth'], function () {
         return view('pages.site_information');
     })->name('site_information');
 
-    Route::get('faqs_list', 'FaqsController@index')->name('faqs.list');
+
+
+    Route::put('faqs/update_sequence', 'FaqsController@updateSequence')->name('faqs.update_sequence');
+    Route::resource('faqs', 'FaqsController');
+    Route::put('services/update_sequence', 'ServicesController@updateSequence')->name('faqs.update_sequence');
+    Route::resource('services', 'ServicesController');
+
+
 });
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('user', 'UserController', ['except' => ['show']]);

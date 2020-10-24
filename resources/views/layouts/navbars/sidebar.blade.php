@@ -9,7 +9,7 @@
       {{ __('Marriedly') }}<br>
     </a>
   </div>
-  
+
   <div class="sidebar-wrapper">
     <ul class="nav">
       <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
@@ -25,7 +25,7 @@
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'services' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('site_information') }}">
+        <a class="nav-link" href="{{ route('services.index') }}">
           <i class="material-icons">content_paste</i>
             <p>{{ __('Services') }}</p>
         </a>
@@ -55,7 +55,7 @@
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'faqs' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('faqs.list') }}">
+        <a class="nav-link" href="{{ route('faqs.index') }}">
           <i class="material-icons">content_paste</i>
             <p>{{ __('Faq\'s') }}</p>
         </a>

@@ -14,10 +14,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- CSS Files -->
     <link href="{{ asset('material') }}/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
+    <link href="{{ asset('material') }}/css/material-dashboard.min.css?v=2.1.1" rel="stylesheet" />
+
     <!-- CSS Just for demo purpose, don't include it in your project -->
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     </head>
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
     <body class="{{ $class ?? '' }}">
         @auth()
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
