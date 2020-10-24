@@ -51,6 +51,8 @@
                 </div>
               </div>
               <div class="card-footer ml-auto mr-auto">
+                <a href="{{ route('faqs.index') }}" class="btn btn-info">{{ __('Cancel') }}</a>
+
                 <button type="submit" class="btn btn-primary">{{ __('Update') }}</button>
               </div>
             </div>

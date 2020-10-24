@@ -12,7 +12,7 @@
             <div class="card ">
               <div class="card-header card-header-primary">
                 <h4 class="card-title">{{ __('Create Faqs') }}</h4>
-                
+
               </div>
               <div class="card-body ">
                 @if (session('status'))
@@ -51,6 +51,8 @@
                 </div>
               </div>
               <div class="card-footer ml-auto mr-auto">
+                <a href="{{ route('faqs.index') }}" class="btn btn-info">{{ __('Cancel') }}</a>
+
                 <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
               </div>
             </div>

@@ -84,7 +84,7 @@
                                 </div>
                             </div>
                             <div class="card-footer ml-auto mr-auto">
-                                <a href="{{ route('services.index') }}" class="btn btn-info">{{ __('Cancel') }}</button>
+                                <a href="{{ route('services.index') }}" class="btn btn-info">{{ __('Cancel') }}</a>
 
                                 <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
 
