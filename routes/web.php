@@ -17,6 +17,8 @@ Route::get('/', 'SiteController@index')->name('home');
 Route::get('/service/{service?}', 'SiteController@services')->name('service');
 Route::get('/portfolio/', 'SiteController@portfolio')->name('portfolio');
 Route::get('/faqs/', 'SiteController@faqs')->name('site_faqs');
+Route::post('enquiry', 'SaveEnquiryController@store')->name('enquiry.store');
+
 
 
 Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -28,53 +30,28 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
-Route::get('/home', 'HomeController@index')->name('dashboard')->middleware('auth');
-
-Route::group([ 'prefix' => 'admin', 'middleware' => 'auth'], function () {
-    Route::get('table-list', function () {
-        return view('pages.table_list');
-    })->name('table');
-
-    Route::get('typography', function () {
-        return view('pages.typography');
-    })->name('typography');
-
-    Route::get('icons', function () {
-        return view('pages.icons');
-    })->name('icons');
-
-    Route::get('map', function () {
-        return view('pages.map');
-    })->name('map');
-
-    Route::get('notifications', function () {
-        return view('pages.notifications');
-    })->name('notifications');
-
-    Route::get('rtl-support', function () {
-        return view('pages.language');
-    })->name('language');
-
-    Route::get('upgrade', function () {
-        return view('pages.upgrade');
-    })->name('upgrade');
-
-    Route::get('site_information', function () {
-        return view('pages.site_information');
-    })->name('site_information');
 
 
-
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+    Route::get('home', 'HomeController@index')->name('dashboard');
     Route::put('faqs/update_sequence', 'FaqsController@updateSequence')->name('faqs.update_sequence');
     Route::resource('faqs', 'FaqsController');
     Route::put('services/update_sequence', 'ServicesController@updateSequence')->name('faqs.update_sequence');
     Route::resource('services', 'ServicesController');
+    Route::get('site_information', 'SiteInformationController@index')->name('site_information.index');
+    Route::post('site_information', 'SiteInformationController@store')->name('site_information.store');
+    Route::put('slider/update_sequence', 'SliderController@updateSequence')->name('slider.update_sequence');
+    Route::resource('slider', 'SliderController');
+    Route::resource('enquiries', 'EnquiriesController')->except('store');
 
 
+
+
+    Route::group(['middleware' => 'auth'], function () {
+        Route::resource('user', 'UserController', ['except' => ['show']]);
+        Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
+        Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
+        Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
+    });
 });
-Route::group(['middleware' => 'auth'], function () {
-    Route::resource('user', 'UserController', ['except' => ['show']]);
-    Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
-    Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
-    Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
-});
+

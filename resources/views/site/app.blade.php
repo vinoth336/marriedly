@@ -21,7 +21,8 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('web/include/rs-plugin/css/settings.css') }}" media="screen" />
 	<link rel="stylesheet" type="text/css" href="{{ asset('web/include/rs-plugin/css/layers.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('web/include/rs-plugin/css/navigation.css') }}">
-	<title>Marriedly - Wedding Planner</title>
+    <title>Marriedly - Wedding Planner</title>
+    <script src="{{  asset('web/js/jquery.js') }}"></script>
 </head>
 
 <body class="stretched">
@@ -81,7 +82,7 @@
 			</div>
 			<div class="header-wrap-clone"></div>
         </header>
-        
+
         @yield('content')
 
-        @include('site.footer')       
+        @include('site.footer')

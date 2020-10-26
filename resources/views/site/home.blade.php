@@ -635,68 +635,12 @@
 							<div class="fancy-title title-border">
 								<h3>Send us an Email</h3>
 							</div>
-							<div class="form-widget">
-								<div class="form-result"></div>
-								<form class="mb-0" id="template-contactform" name="template-contactform"
-									action="http://themes.semicolonweb.com/html/canvas/include/form.php" method="post">
-									<div class="form-process">
-										<div class="css3-spinner">
-											<div class="css3-spinner-scaler"></div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-4 form-group">
-											<label for="template-contactform-name">Name <small>*</small></label>
-											<input type="text" id="template-contactform-name"
-												name="template-contactform-name" value=""
-												class="sm-form-control required" />
-										</div>
-										<div class="col-md-4 form-group">
-											<label for="template-contactform-email">Email <small>*</small></label>
-											<input type="email" id="template-contactform-email"
-												name="template-contactform-email" value=""
-												class="required email sm-form-control" />
-										</div>
-										<div class="col-md-4 form-group">
-											<label for="template-contactform-phone">Phone</label>
-											<input type="text" id="template-contactform-phone"
-												name="template-contactform-phone" value="" class="sm-form-control" />
-										</div>
-										<div class="w-100"></div>
-										<div class="col-md-8 form-group">
-											<label for="template-contactform-subject">Subject <small>*</small></label>
-											<input type="text" id="template-contactform-subject" name="subject" value=""
-												class="required sm-form-control" />
-										</div>
-										<div class="col-md-4 form-group">
-											<label for="template-contactform-service">Services</label>
-											<select id="template-contactform-service"
-												name="template-contactform-service" class="sm-form-control">
-												<option value="">-- Select One --</option>
-												<option value="Wordpress">Wordpress</option>
-												<option value="PHP / MySQL">PHP / MySQL</option>
-												<option value="HTML5 / CSS3">HTML5 / CSS3</option>
-												<option value="Graphic Design">Graphic Design</option>
-											</select>
-										</div>
-										<div class="w-100"></div>
-										<div class="col-12 form-group">
-											<label for="template-contactform-message">Message <small>*</small></label>
-											<textarea class="required sm-form-control" id="template-contactform-message"
-												name="template-contactform-message" rows="6" cols="30"></textarea>
-										</div>
-										<div class="col-12 form-group d-none">
-											<input type="text" id="template-contactform-botcheck"
-												name="template-contactform-botcheck" value="" class="sm-form-control" />
-										</div>
-										<div class="col-12 form-group">
-											<button name="submit" type="submit" id="submit-button" tabindex="5"
-												value="Submit" class="button button-3d m-0">Submit Comment</button>
-										</div>
-									</div>
-									<input type="hidden" name="prefix" value="template-contactform-">
-								</form>
-							</div>
+							<!-- Enquiry Form Start Here -->
+                                <?php $enquiry_form_class = 'col-md-4' ; ?>
+                                @include('site.enquiry_form',  ['enquiry_form_class' => $enquiry_form_class] )
+
+                            <!-- Enquiry Form Ended Here -->
+
 						</div>
 
 						<div class="col-lg-6 min-vh-50">
@@ -767,11 +711,18 @@
 									</div>
 								</div>
 							</div>
-							
+
 						</div>
 					</div>
 				</div>
-			</div>	
+			</div>
 		</section>
-@endsection		
-		
+<script>
+     $(document).ready(function() {
+            // bind 'myForm' and provide a simple callback function
+            $('#myForm').ajaxForm(function() {
+                alert("Thank you for your comment!");
+            });
+        });
+    </script>
+        @endsection

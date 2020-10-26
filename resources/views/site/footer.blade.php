@@ -19,8 +19,8 @@
                             <i class="icon-whatsapp"></i>
                             <i class="icon-whatsapp"></i>
                         </a>
-                        
-                    </div>                    
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
 </div>
 
 <div id="gotoTop" class="icon-angle-up"></div>
-<script src="{{  asset('web/js/jquery.js') }}"></script>
+
 <script src="{{  asset('web/js/plugins.min.js') }}"></script>
 <script src="{{  asset('web/js/functions.js') }}"></script>
 <a href="https://wa.me/919092780007?text=Hi Marriedly," class="float" target="_blank">

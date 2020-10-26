@@ -13,13 +13,13 @@
   <div class="sidebar-wrapper">
     <ul class="nav">
       <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('home') }}">
+        <a class="nav-link" href="{{ route('dashboard') }}">
           <i class="material-icons">dashboard</i>
             <p>{{ __('Dashboard') }}</p>
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'site_information' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('site_information') }}">
+        <a class="nav-link" href="{{ route('site_information.index') }}">
           <i class="material-icons">content_paste</i>
             <p>{{ __('Site Information') }}</p>
         </a>
@@ -31,25 +31,25 @@
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'slider' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('site_information') }}">
+        <a class="nav-link" href="{{ route('slider.index') }}">
           <i class="material-icons">content_paste</i>
             <p>{{ __('Slider') }}</p>
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'testimonial' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('site_information') }}">
+        <a class="nav-link" href="{{ route('site_information.index') }}">
           <i class="material-icons">content_paste</i>
             <p>{{ __('Testimonial') }}</p>
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'enquiries' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('site_information') }}">
+        <a class="nav-link" href="{{ route('enquiries.index') }}">
           <i class="material-icons">content_paste</i>
             <p>{{ __('Enquiries') }}</p>
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'portfolio' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('site_information') }}">
+        <a class="nav-link" href="{{ route('site_information.index') }}">
           <i class="material-icons">content_paste</i>
             <p>{{ __('Portfolio') }}</p>
         </a>
@@ -61,7 +61,7 @@
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'faqs' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('site_information') }}">
+        <a class="nav-link" href="{{ route('site_information.index') }}">
           <i class="material-icons">content_paste</i>
             <p>{{ __('Api\'s Integration') }}</p>
         </a>
