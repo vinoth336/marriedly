@@ -55,7 +55,7 @@
 					<div class="header-row">
 
 						<div id="logo" style="background-color: #1abc9c;">
-							<a href="index.html" class="standard-logo"
+							<a href="{{ route('home') }}" class="standard-logo"
 								data-dark-logo="{{ asset('web/images/site_images/logo2.png') }}"><img src="{{ asset('web/images/site_images/logo2.png') }}"
 									alt="{{ config('app.name') }}" style="width: 126px;height: 30px;"></a>
 							<a href="index.html" class="retina-logo" data-dark-logo="{{ asset('web/images/site_images/logo2.png') }}"><img
