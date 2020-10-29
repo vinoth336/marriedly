@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'typography', 'titlePage' => __('Typography')])
+@extends('layouts.app', ['activePage' => 'slider', 'titlePage' => __('Slider')])
 
 @section('content')
 
@@ -37,7 +37,7 @@ $(document).ready(function() {
         <div class="col-md-12">
                 <div class="card ">
                     <div class="card-header card-header-primary">
-                        <h4 class="card-title float-left">{{ __('services') }}</h4>
+                        <h4 class="card-title float-left">{{ __('Sliders') }}</h4>
                         <a href="{{ route('slider.create') }}" class="btn btn-success float-right"><i class="material-icons">add</i></a>
                     </div>
                     <div class="card-body ">
@@ -47,7 +47,8 @@ $(document).ready(function() {
                             <li class="card">
                                 <div class="card-header" id="heading{{ $slider->id }}">
                                     <div class="pull-left">
-                                        <img src="{{ asset('web/images/slider/' . $slider->slider ) }}" style="width:150px" />
+                                        <img src="{{ asset('web/images/slider/' . $slider->slider ) }}" style="width:150px;display:inline-block" class="inline-block" />
+                                        <p style="display:inline-block;text-align:justify">{{ $slider->description }}</p>
                                         <input type="hidden" name="sequence[]" value="{{ $slider->id }}" />
                                     </div>
                                     <div class="pull-right">

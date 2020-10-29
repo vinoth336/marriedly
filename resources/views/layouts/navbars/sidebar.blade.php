@@ -36,8 +36,8 @@
             <p>{{ __('Slider') }}</p>
         </a>
       </li>
-      <li class="nav-item{{ $activePage == 'testimonial' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('site_information.index') }}">
+      <li class="nav-item{{ $activePage == 'testimonials' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('testimonials.index') }}">
           <i class="material-icons">content_paste</i>
             <p>{{ __('Testimonial') }}</p>
         </a>
@@ -49,7 +49,7 @@
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'portfolio' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('site_information.index') }}">
+        <a class="nav-link" href="{{ route('portfolio.index') }}">
           <i class="material-icons">content_paste</i>
             <p>{{ __('Portfolio') }}</p>
         </a>

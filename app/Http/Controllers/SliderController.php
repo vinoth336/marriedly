@@ -120,7 +120,7 @@ class SliderController extends Controller
 
         try{
 
-            $this->unlinkSliderSlider($slider->slider);
+            $slider->unlinkImage($slider->slider);
 
             $slider->delete();
 
@@ -169,63 +169,12 @@ class SliderController extends Controller
      */
     public function saveSlider(Slider $service, $request)
     {
-        $this->storeSlider($service, $request);
+        $image = $request->has('slider') ? $request->file('slider') : null;
+        $service->storeImage($image);
         $service->description = $request->input('description');
         $service->sequence = $service->sequence ?? Slider::count() + 1;
         $service->save();
         return $service;
     }
-
-
-    /**
-     * Store uploaded Slider slider
-     *
-     * @param $slider
-     * @param $request
-     * @return bool
-     */
-    public function storeSlider($service, $request)
-    {
-        if ($request->has('slider')) {
-            // Get slider file
-            $slider = $request->file('slider');
-
-            $name = null;
-
-            if($slider){
-                $name = time() . '_' . preg_replace("/[^a-zA-Z]+/", "", $request->input('name')) . "." . $slider->getClientOriginalExtension();
-
-                $slider->move(public_path('web/images/slider'), $name);
-            }
-
-            $this->unlinkSliderSlider($service->getOriginal('slider'));
-
-            $service->slider = $name;
-
-            return true;
-        } elseif ($request->input('remove_slider')) {
-
-            $this->unlinkSliderSlider($service->getOriginal('slider'));
-
-            return true;
-        }
-
-        return false;
-    }
-
-    public function unlinkSliderSlider($slider)
-    {
-        $existing_file = public_path('web/images/slider/') . $slider;
-
-        if (file_exists($existing_file)) {
-            @unlink($existing_file);
-            return true;
-        } else {
-            info(" File is not Exists " . $existing_file);
-        }
-
-        return false;
-    }
-
 
 }

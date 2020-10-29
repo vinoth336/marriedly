@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Portfolio;
+use App\PortfolioImage;
+use App\Services;
+use App\SiteInformation;
+use App\Slider;
+use App\Testimonial;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
 {
-    
+
     /**
      * Show the application dashboard.
      *
@@ -14,7 +20,19 @@ class SiteController extends Controller
      */
     public function index()
     {
-        return view('site.home');
+        $siteInformation = SiteInformation::first();
+        $sliders = Slider::orderBy('sequence')->get();
+        $services = Services::orderBy('sequence');
+        $awesomeWorks = PortfolioImage::where('show_in_home_page', 1)
+        ->orderBy('created_at', 'desc')->limit(12)->get();
+        $testmonials = Testimonial::orderBy('created_at', 'desc')->get();
+
+        return view('site.home', ['siteInformation' => $siteInformation,
+        'sliders' => $sliders,
+        'services' => $services,
+        'awesomeWorks' => $awesomeWorks,
+        'testmonials' => $testmonials
+        ]);
     }
 
     public function services(Request $request, $service=null)
@@ -24,13 +42,17 @@ class SiteController extends Controller
         } else {
             return view('site.service_multiple');
         }
-    
-        
-    }   
+
+
+    }
 
     public function portfolio()
     {
-        return view('site.portfolio'); 
+
+        $portfolio = Portfolio::orderBy('sequence')->get();
+        $portfolioImages = PortfolioImage::get();
+
+        return view('site.portfolio', ['portfolio' => $portfolio, 'portfolioImages' => $portfolioImages]);
     }
 
     public function testimonial()

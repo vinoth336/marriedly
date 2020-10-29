@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'slider', 'titlePage' => __('Create slider')])
+@extends('layouts.app', ['activePage' => 'slider', 'titlePage' => __('Edit slider')])
 
 @section('content')
     <div class="content">
@@ -11,7 +11,7 @@
 
                         <div class="card ">
                             <div class="card-header card-header-primary">
-                                <h4 class="card-title">{{ __('Create slider') }}</h4>
+                                <h4 class="card-title">{{ __('Edit slider') }}</h4>
 
                             </div>
                             <div class="card-body ">
@@ -58,7 +58,7 @@
                                               <span class="btn btn-rose btn-round btn-file">
                                                 <span class="fileinput-new">Select image</span>
                                                 <span class="fileinput-exists">Change</span>
-                                                <input type="hidden" name="remove_slider" value="" />
+                                                <input type="hidden" name="remove_image" value="" />
                                                 <input type="file" name="slider" accept="image/x-png,image/jpg,image/jpeg" >
                                               </span>
                                               <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
@@ -84,7 +84,7 @@
     </div>
     <script>
         $("[data-dismiss='fileinput']").on('click', function() {
-          $("[name='remove_slider']").val(1);
+          $("[name='remove_image']").val(1);
         });
         </script>
 @endsection

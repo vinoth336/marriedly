@@ -51,6 +51,7 @@ $(document).ready(function() {
                                                 data-target="#collapse{{ $service->id }}" aria-expanded="true"
                                                 aria-controls="collapse{{ $service->id }}">
                                                 <a class="hand"><i class="material-icons">reorder</i></a>
+                                                <img src="{{ asset('web/images/portfolio_images/thumbnails/' . $service->banner ) }}" style="width:70px;display:inline-block" class="inline-block" />
                                                 {{ ucwords($service->name) }}
                                         </h5>
                                         <input type="hidden" name="sequence[]" value="{{ $service->id }}" />
@@ -84,8 +85,7 @@ $(document).ready(function() {
             "dataType": "json",
             "data" : $("#sortable").find('[name="sequence[]"]').serialize(),
             "success" : function(data) {
-                    console.log(data);
-                    alert("Update Successfully");
+
             }
         });
 

@@ -119,7 +119,7 @@ class ServicesController extends Controller
 
         try{
 
-            $this->unlinkServicesBanner($service->banner);
+            $this->unlinkImage($service->banner);
 
             $service->delete();
 
@@ -168,64 +168,14 @@ class ServicesController extends Controller
      */
     public function saveServices(Services $service, $request)
     {
-        $this->storeBanner($service, $request);
+        $image = $request->has('banner') ? $request->file('banner') : null;
+        $service->storeImage($image, ['width' => 230 , 'height' => 230]);
         $service->name = $request->input('name');
+        $service->icon = $request->input('icon');
         $service->description = $request->input('description');
         $service->sequence = $service->sequence ?? Services::count() + 1;
         $service->save();
         return $service;
     }
-
-
-    /**
-     * Store uploaded Services banner
-     *
-     * @param $Services
-     * @param $request
-     * @return bool
-     */
-    public function storeBanner($service, $request)
-    {
-        if ($request->has('banner')) {
-            // Get banner file
-            $banner = $request->file('banner');
-
-            $name = null;
-
-            if($banner){
-                $name = time() . '_' . preg_replace("/[^a-zA-Z]+/", "", $request->input('name')) . "." . $banner->getClientOriginalExtension();
-
-                $banner->move(public_path('web/images/banner'), $name);
-            }
-
-            $this->unlinkServicesBanner($service->getOriginal('banner'));
-
-            $service->banner = $name;
-
-            return true;
-        } elseif ($request->input('remove_banner')) {
-
-            $this->unlinkServicesBanner($service->getOriginal('banner'));
-
-            return true;
-        }
-
-        return false;
-    }
-
-    public function unlinkServicesBanner($banner)
-    {
-        $existing_file = public_path('web/images/banner/') . $banner;
-
-        if (file_exists($existing_file)) {
-            @unlink($existing_file);
-            return true;
-        } else {
-            info(" File is not Exists " . $existing_file);
-        }
-
-        return false;
-    }
-
 
 }

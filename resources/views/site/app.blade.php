@@ -3,25 +3,37 @@
 
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="author" content="Marriedly" />
+	<meta name="author" content="{{ $siteInformation->site_name }}" />
+    <meta name="description" content="{{ $siteInformation->meta_description }}" />
+    <link rel="canonical" href="https://www.marriedly.in" />
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Choose the Best Wedding Decorators In Coimbatore -marriedly.in">
+    <meta property="og:description" content="Find the best wedding decorators in coimbatore for your Events like Wedding Decorations,Birthday Decorations,Engagement,Reception and outdoor wedding Backdrops. Order now!">
+    <meta property="og:url" content="https://www.marriedly.in">
+    <meta property="og:site_name" content="Wedding Decorators in Coimbatore">
+    <meta property="article:publisher" content="https://www.facebook.com/marriedly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@MarriedlyWeddingPlanner">
+    <meta name="twitter:site" content="@MarriedlyWeddingPlanner">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<link
 		href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&amp;display=swap"
         rel="stylesheet" type="text/css" />
 
     <link rel="stylesheet" href="{{ asset('web/style.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('web/css/dark.css') }}" type="text/css">
 	<link rel="stylesheet" href="{{ asset('web/css/bootstrap.css') }} " type="text/css" />
-	<link rel="stylesheet" href="{{ asset('web/css/dark.css') }}" type="text/css" />
 	<link rel="stylesheet" href="{{ asset('web/css/font-icons.css') }}" type="text/css" />
 	<link rel="stylesheet" href="{{ asset('web/css/animate.css') }}" type="text/css" />
 	<link rel="stylesheet" href="{{ asset('web/css/magnific-popup.css') }}" type="text/css" />
 	<link rel="stylesheet" href="{{ asset('web/css/custom.css') }}" type="text/css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="{{ asset('web/css/swiper.css') }}" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="{{ asset('web/include/rs-plugin/css/settings.css') }}" media="screen" />
 	<link rel="stylesheet" type="text/css" href="{{ asset('web/include/rs-plugin/css/layers.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('web/include/rs-plugin/css/navigation.css') }}">
-    <title>Marriedly - Wedding Planner</title>
+    <title>{{ $siteInformation->site_name }}</title>
     <script src="{{  asset('web/js/jquery.js') }}"></script>
 </head>
 
@@ -56,10 +68,11 @@
 
 						<div id="logo" style="background-color: #1abc9c;">
 							<a href="{{ route('home') }}" class="standard-logo"
-								data-dark-logo="{{ asset('web/images/site_images/logo2.png') }}"><img src="{{ asset('web/images/site_images/logo2.png') }}"
+                                data-dark-logo="{{ asset('web/images/logo/' . $siteInformation->logo) }}">
+                                <img src="{{ asset('web/images/logo/' . $siteInformation->logo) }}"
 									alt="{{ config('app.name') }}" style="width: 126px;height: 30px;"></a>
-							<a href="index.html" class="retina-logo" data-dark-logo="{{ asset('web/images/site_images/logo2.png') }}"><img
-									src="{{ asset('web/images/site_images/logo2.png') }}" alt="{{ config('app.name') }}"></a>
+							<a href="index.html" class="retina-logo" data-dark-logo=""><img
+									src="{{ asset('web/images/logo/' . $siteInformation->logo) }}" alt="{{ config('app.name') }}"></a>
 						</div>
 						<div class="header-misc">
 

@@ -43,6 +43,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::put('slider/update_sequence', 'SliderController@updateSequence')->name('slider.update_sequence');
     Route::resource('slider', 'SliderController');
     Route::resource('enquiries', 'EnquiriesController')->except('store');
+    Route::resource('testimonials', 'TestimonialController');
+    Route::resource('portfolio', 'PortfolioController');
 
 
 

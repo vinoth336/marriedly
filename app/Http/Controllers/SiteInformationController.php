@@ -49,9 +49,8 @@ class SiteInformationController extends Controller
         $siteInformation->working_hours_mon_fri = $request->input('working_hours_mon_fri');
         $siteInformation->working_hours_sat = $request->input('working_hours_sat');
         $siteInformation->working_hours_sun = $request->input('working_hours_sun');
-        $this->storeLogo($siteInformation, $request);
-
-
+        $image = $request->has('logo') ? $request->file('logo') : null;
+        $siteInformation->storeImage($image);
 
         $siteInformation->save();
 
@@ -103,57 +102,6 @@ class SiteInformationController extends Controller
     public function destroy(SiteInformation $siteInformation)
     {
         //
-    }
-
-
-     /**
-     * Store uploaded Services Logo
-     *
-     * @param $siteInformations
-     * @param $request
-     * @return bool
-     */
-    public function storeLogo($siteInformation, $request)
-    {
-        if ($request->has('logo')) {
-            // Get Logo file
-            $logo = $request->file('logo');
-
-            $name = null;
-
-            if($logo){
-                $name = time() . '_' . preg_replace("/[^a-zA-Z]+/", "", $request->input('name')) . "." . $logo->getClientOriginalExtension();
-
-                $logo->move(public_path('web/images/logo'), $name);
-            }
-
-            $this->unlinkServicesLogo($siteInformation->logo);
-
-            $siteInformation->logo = $name;
-
-            return true;
-        } elseif ($request->input('remove_logo')) {
-
-            $this->unlinkServicesLogo($siteInformation->logo);
-
-            return true;
-        }
-
-        return false;
-    }
-
-    public function unlinkServicesLogo($logo)
-    {
-        $existing_file = public_path('web/images/logo/') . $logo;
-
-        if (file_exists($existing_file)) {
-            @unlink($existing_file);
-            return true;
-        } else {
-            info(" File is not Exists " . $existing_file);
-        }
-
-        return false;
     }
 
 }

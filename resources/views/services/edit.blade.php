@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'services', 'titlePage' => __('Create services')])
+@extends('layouts.app', ['activePage' => 'services', 'titlePage' => __('Edit services')])
 
 @section('content')
     <div class="content">
@@ -11,7 +11,7 @@
 
                         <div class="card ">
                             <div class="card-header card-header-primary">
-                                <h4 class="card-title">{{ __('Create services') }}</h4>
+                                <h4 class="card-title">{{ __('Edit services') }}</h4>
 
                             </div>
                             <div class="card-body ">
@@ -39,6 +39,22 @@
                                             @if ($errors->has('name'))
                                                 <span id="name-error" class="error text-danger"
                                                     for="input-contact_person">{{ $errors->first('name') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-sm-2 col-form-label">{{ __('Service Icon') }}</label>
+                                    <div class="col-sm-7">
+                                        <div class="form-group{{ $errors->has('icon') ? ' has-danger' : '' }}">
+                                            <input
+                                                class="form-control{{ $errors->has('icon') ? ' is-invalid' : '' }}"
+                                                name="icon" id="input-contact_person" type="text"
+                                                placeholder="{{ __('Service Icon') }}" value="{{ old('icon', $service->icon) }}"
+                                                required="true" aria-required="true" />
+                                            @if ($errors->has('icon'))
+                                                <span id="name-error" class="error text-danger"
+                                                    for="input-contact_person">{{ $errors->first('icon') }}</span>
                                             @endif
                                         </div>
                                     </div>
