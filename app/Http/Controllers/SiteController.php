@@ -37,10 +37,11 @@ class SiteController extends Controller
 
     public function services(Request $request, $service=null)
     {
+        $siteInformation = SiteInformation::first();
         if($service) {
-            return view('site.service_single');
+            return view('site.service_single', ['siteInformation' => $siteInformation]);
         } else {
-            return view('site.service_multiple');
+            return view('site.service_multiple', ['siteInformation' => $siteInformation]);
         }
 
 
@@ -49,10 +50,15 @@ class SiteController extends Controller
     public function portfolio()
     {
 
+        $siteInformation = SiteInformation::first();
         $portfolio = Portfolio::orderBy('sequence')->get();
         $portfolioImages = PortfolioImage::get();
 
-        return view('site.portfolio', ['portfolio' => $portfolio, 'portfolioImages' => $portfolioImages]);
+        return view('site.portfolio',
+        ['portfolio' => $portfolio,
+        'portfolioImages' => $portfolioImages,
+        'siteInformation' => $siteInformation
+        ]);
     }
 
     public function testimonial()
@@ -67,7 +73,9 @@ class SiteController extends Controller
 
     public function faqs()
     {
-        return view('site.faqs');
+        $siteInformation = SiteInformation::first();
+
+        return view('site.faqs', ['siteInformation' => $siteInformation]);
     }
 
     public function saveEnquiry()
