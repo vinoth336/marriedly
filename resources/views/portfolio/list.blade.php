@@ -79,13 +79,12 @@ $(document).ready(function() {
     function updateSequence()
     {
         $.ajax({
-            "url" : "/admin/portfolios/update_sequence",
+            "url" : "/admin/portfolio/update_sequence",
             "type" : "put",
             "dataType": "json",
             "data" : $("#sortable").find('[name="sequence[]"]').serialize(),
             "success" : function(data) {
-                    console.log(data);
-                    alert("Update Successfully");
+
             }
         });
 
