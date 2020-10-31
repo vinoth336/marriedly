@@ -54,7 +54,7 @@ $(document).ready(function() {
                                                 {{ ucwords($portfolio->name) }}
                                                 <br>
                                                 <i class="fa fa-tag" aria-hidden="true"></i>&nbsp;
-                                                {{ implode(',' ,$portfolio->services()->pluck('name')->toArray()) }}
+                                                <small>{{ implode(',' ,$portfolio->services()->pluck('name')->toArray()) }}</small>
                                         </h5>
                                         <input type="hidden" name="sequence[]" value="{{ $portfolio->id }}" />
                                     </div>

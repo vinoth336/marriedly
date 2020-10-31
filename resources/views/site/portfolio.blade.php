@@ -27,22 +27,26 @@
 
                     <section id="slider" class="slider-element">
                         <div id="flickr" class="widget clearfix">
-                            <div id="flickr-widget" class="flickr-feed masonry-thumbs grid-container has-init-isotope"
-                                data-id="" data-count="" data-type="group" data-lightbox="gallery"
-                                style="position: relative; height: 130px;">
-                                @foreach ($portfolioImages as $portfolioImage)
-                                    <a class="grid-item"
-                                        href="{{ asset('web/images/portfolio_images/' . $portfolioImage->image) }}"
-                                        title="Justice" data-lightbox="gallery-item"
-                                        style="position: absolute; left: 0%; top: 0px;">
-                                        <img src="{{ asset('web/images/portfolio_images/thumbnails/' . $portfolioImage->image) }}"
-                                            alt="Justice">
-                                    </a>
-                                @endforeach
-                            </div>
-
+                            @foreach ($portfolios as $portfolio)
+                                <h3>{{ strtoupper($portfolio->name) }}</h3><br>
+                                <div id="flickr-widget" class="flickr-feed masonry-thumbs grid-container has-init-isotope"
+                                    data-id="" data-count="" data-type="group" data-lightbox="gallery"
+                                    style="position: relative; height: 130px;">
+                                    @foreach ($portfolio->portfolioImages()->orderBy('sequence')->get() as $portfolioImage)
+                                        <a class="grid-item"
+                                            href="{{ asset('web/images/portfolio_images/' . $portfolioImage->image) }}"
+                                            title="Justice" data-lightbox="gallery-item"
+                                            style="position: absolute; left: 0%; top: 0px;">
+                                            <img src="{{ asset('web/images/portfolio_images/thumbnails/' . $portfolioImage->image) }}"
+                                                alt="Justice">
+                                        </a>
+                                    @endforeach
+                                </div>
+                                <hr>
+                            @endforeach
                         </div>
                     </section>
+
                 </div>
             </div>
         </div>

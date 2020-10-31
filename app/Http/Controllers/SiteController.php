@@ -76,14 +76,12 @@ class SiteController extends Controller
     {
 
         $siteInformation = SiteInformation::first();
-        $portfolio = Portfolio::orderBy('sequence')->get();
-        $portfolioImages = PortfolioImage::get();
+        $portfolios = Portfolio::orderBy('sequence')->get();
 
         return view(
             'site.portfolio',
             [
-                'portfolio' => $portfolio,
-                'portfolioImages' => $portfolioImages,
+                'portfolios' => $portfolios,
                 'siteInformation' => $siteInformation
             ]
         );
