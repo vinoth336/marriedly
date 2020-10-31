@@ -119,8 +119,9 @@ class ServicesController extends Controller
 
         try{
 
-            $this->unlinkImage($service->banner);
+            $service->unlinkImage($service->banner);
 
+            $service->portfolios()->detach();
             $service->delete();
 
             DB::commit();

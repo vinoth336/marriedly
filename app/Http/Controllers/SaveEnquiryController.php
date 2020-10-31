@@ -20,6 +20,7 @@ class SaveEnquiryController extends Controller
             Enquiries::create(
                 [
                     'name' => $request->input("name"),
+                    'service_id' => $request->input('service'),
                     'email' => $request->input("email"),
                     'phone_no' => $request->input("phone_no"),
                     'subject' => $request->input("subject"),

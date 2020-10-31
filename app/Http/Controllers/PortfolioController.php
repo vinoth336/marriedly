@@ -83,7 +83,12 @@ class PortfolioController extends Controller
      */
     public function edit(Portfolio $portfolio)
     {
-        return view('portfolio.edit')->with(['service' => $portfolio]);
+        $services = $this->getServices()->orderBy('sequence')->get();
+
+        return view('portfolio.edit')->with([
+            'portfolio' => $portfolio,
+            'services' => $services
+            ]);
     }
 
     /**
@@ -124,13 +129,17 @@ class PortfolioController extends Controller
 
         try{
 
-            $this->unlinkPortfolioImageBanner($portfolio->banner);
+            foreach($portfolio->portfolioImages as $portfolioImage){
+                    $portfolioImage->unlinkImage($portfolioImage->image);
+            }
 
+            $portfolio->portfolioImages()->delete();
+            $portfolio->services()->detach();
             $portfolio->delete();
 
             DB::commit();
 
-            return redirect()->route('portfolio.index')->with('status', 'Created Successfully');
+            return redirect()->route('portfolio.index')->with('status', 'Removed Successfully');
 
         } catch(Exception $e) {
             DB::rollBack();
@@ -178,10 +187,10 @@ class PortfolioController extends Controller
         $portfolio->storeImage($portfolioBanner, ['width' => 161 , 'height' => 161]);
         $portfolio->name = $request->input('name');
         $portfolio->description = $request->input('description');
-        $portfolio->service_id = $request->input('service');
         $portfolio->sequence = $portfolio->sequence ?? Portfolio::count() + 1;
         $portfolio->save();
 
+        $portfolio->services()->sync($request->input('services'));
 
 
         if($request->has('portfolio_images')) {

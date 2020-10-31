@@ -51,10 +51,10 @@
                                         <div class="form-group{{ $errors->has('service') ? ' has-danger' : '' }}">
                                             <select
                                                 class="selectpicker form-control{{ $errors->has('service') ? ' is-invalid' : '' }}"
-                                                name="service" id="input-service" type="text"
+                                                name="services[]" id="input-service" type="text"
                                                 placeholder="{{ __('Image Name') }}"
-                                                required="true" aria-required="true" >
-
+                                                required="true" aria-required="true" multiple>
+                                                    <option value=''>Select Services</option>
                                                 @foreach($services as $service)
 
                                                     <option value="{{ $service->id }}" @if($service->id == old('service')) selected @endif >{{  $service->name }}</option>

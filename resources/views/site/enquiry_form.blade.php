@@ -58,6 +58,20 @@
             @endif
         </div>
         <div class="w-100"></div>
+        <div class="{{ $enquiry_form_class }}  form-group">
+            <label for="template-contactform-email">Services <small>*</small></label>
+            <select name="service" class="required email sm-form-control" >
+                @foreach ($services as $service )
+                    <option value="{{ $service->id }}"
+                        @if($service->id == old('service')) selected @endif>
+                            {{ strtoupper($service->name) }}
+                    </option>
+                @endforeach
+            </select>
+            @if ($errors->has('service'))
+                <span id="service-error" class="error text-danger" for="input-service">{{ $errors->first('service') }}</span>
+            @endif
+        </div>
         <div class="col-md-8 form-group">
             <label for="template-contactform-subject">Subject <small>*</small></label>
             <input type="text" id="template-contactform-subject" name="subject" value="{{ old('subject') }}"

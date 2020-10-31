@@ -30,7 +30,7 @@ class Services extends Model
 
     public function portfolios()
     {
-        return $this->hasMany(Portfolio::class, 'service_id', 'id');
+        return $this->belongsToMany(Portfolio::class);
     }
 
 }

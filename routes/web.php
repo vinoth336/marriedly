@@ -47,6 +47,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::put('portfolio/update_sequence', 'PortfolioController@updateSequence')->name('portfolio.update_sequence');
     Route::resource('portfolio', 'PortfolioController');
 
+    Route::put('portfolio_images/update_sequence', 'PortfolioImageController@updateSequence')->name('portfolio_images.update_sequence');
+    Route::delete('portfolio_images/{portfolio_image}', 'PortfolioImageController@destroy')->name('portfolio_image.delete');
+
 
 
 

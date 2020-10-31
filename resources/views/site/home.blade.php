@@ -140,7 +140,7 @@
                                 <a href="{{ asset('web/images/portfolio_images/' . $work->image) }}"
                                     data-lightbox="gallery-item">
                                     <img src="{{ asset('web/images/portfolio_images/thumbnails/' . $work->image) }}"
-                                        style="height: 160px" alt="Open Imagination">
+                                        style="max-height: 180px" alt="Open Imagination">
                                 </a>
                             </div>
                             {{--

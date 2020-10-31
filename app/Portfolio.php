@@ -29,4 +29,10 @@ class Portfolio extends Model
         return $this->hasMany(PortfolioImage::class, 'portfolio_id', 'id' );
     }
 
+    public function services()
+    {
+        return $this->belongsToMany(Services::class)->withTimestamps();
+    }
+
+
 }

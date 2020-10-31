@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'typography', 'titlePage' => __('Typography')])
+@extends('layouts.app', ['activePage' => 'typography', 'titlePage' => __('Portfolio')])
 
 @section('content')
 
@@ -37,7 +37,7 @@ $(document).ready(function() {
         <div class="col-md-12">
                 <div class="card ">
                     <div class="card-header card-header-primary">
-                        <h4 class="card-title float-left">{{ __('portfolios') }}</h4>
+                        <h4 class="card-title float-left">{{ __('portfolio') }}</h4>
                         <a href="{{ route('portfolio.create') }}" class="btn btn-success float-right"><i class="material-icons">add</i></a>
                     </div>
                     <div class="card-body ">
@@ -52,6 +52,9 @@ $(document).ready(function() {
                                                 aria-controls="collapse{{ $portfolio->id }}">
                                                 <a class="hand"><i class="material-icons">reorder</i></a>
                                                 {{ ucwords($portfolio->name) }}
+                                                <br>
+                                                <i class="fa fa-tag" aria-hidden="true"></i>&nbsp;
+                                                {{ implode(',' ,$portfolio->services()->pluck('name')->toArray()) }}
                                         </h5>
                                         <input type="hidden" name="sequence[]" value="{{ $portfolio->id }}" />
                                     </div>

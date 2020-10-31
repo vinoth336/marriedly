@@ -101,7 +101,8 @@ class SiteController extends Controller
     {
         $siteInformation = SiteInformation::first();
         $faqs = Faqs::orderBy('sequence')->get();
-        return view('site.faqs', ['siteInformation' => $siteInformation, 'faqs' => $faqs]);
+        $services = Services::orderBy('sequence')->get();
+        return view('site.faqs', ['siteInformation' => $siteInformation, 'faqs' => $faqs, 'services' => $services]);
     }
 
     public function saveEnquiry()

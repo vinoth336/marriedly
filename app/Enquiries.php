@@ -11,7 +11,7 @@ class Enquiries extends Model
 
     protected $table = 'enquiries';
 
-    protected $fillable = ['name', 'phone_no', 'email', 'subject', 'message', 'status'];
+    protected $fillable = ['name', 'service_id', 'phone_no', 'email', 'subject', 'message', 'status'];
 
 
     public function getCreatedAtAttribute($value)

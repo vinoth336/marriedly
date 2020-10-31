@@ -26,6 +26,7 @@ class EnquiryRequest extends FormRequest
         return [
             'name' => 'required|string',
             'email' => 'email:rfc,dns|nullable',
+            'service' => 'required|exists:services,id',
             'subject' => 'required',
             'message' => 'required|min:10|max:500|',
             'phone_no' => 'numeric|required|digits:10'

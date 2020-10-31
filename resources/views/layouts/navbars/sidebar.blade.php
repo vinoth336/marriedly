@@ -60,12 +60,6 @@
             <p>{{ __('Faq\'s') }}</p>
         </a>
       </li>
-      <li class="nav-item{{ $activePage == 'faqs' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('site_information.index') }}">
-          <i class="material-icons">content_paste</i>
-            <p>{{ __('Api\'s Integration') }}</p>
-        </a>
-      </li>
     </ul>
   </div>
 </div>
