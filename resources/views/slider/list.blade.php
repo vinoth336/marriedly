@@ -45,8 +45,10 @@ $(document).ready(function() {
                         <ul class="accordion" id="sortable">
                             @foreach ($sliders as $slider )
                             <li class="card">
+
                                 <div class="card-header" id="heading{{ $slider->id }}">
                                     <div class="pull-left">
+                                    <a class="hand"><i class="material-icons">reorder</i></a>
                                         <img src="{{ asset('web/images/slider/' . $slider->slider ) }}" style="width:150px;display:inline-block" class="inline-block" />
                                         <p style="display:inline-block;text-align:justify">{{ $slider->description }}</p>
                                         <input type="hidden" name="sequence[]" value="{{ $slider->id }}" />
@@ -75,13 +77,11 @@ $(document).ready(function() {
     function updateSequence()
     {
         $.ajax({
-            "url" : "/admin/services/update_sequence",
+            "url" : "/admin/slider/update_sequence",
             "type" : "put",
             "dataType": "json",
             "data" : $("#sortable").find('[name="sequence[]"]').serialize(),
             "success" : function(data) {
-                    console.log(data);
-                    alert("Update Successfully");
             }
         });
 

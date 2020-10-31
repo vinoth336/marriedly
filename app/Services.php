@@ -4,6 +4,7 @@ namespace App;
 
 use App\Traits\StoreImage;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Services extends Model
@@ -25,5 +26,11 @@ class Services extends Model
     protected $fillable = ['name', 'description', 'icon', 'banner', 'sequence'];
 
     public $timestamps = true;
+
+
+    public function portfolios()
+    {
+        return $this->hasMany(Portfolio::class, 'service_id', 'id');
+    }
 
 }

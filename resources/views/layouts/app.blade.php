@@ -82,6 +82,8 @@
         <script src="{{ asset('material') }}/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
 
         <script src="{{ asset('material') }}/js/settings.js"></script>
+        <script src="{{ asset('material') }}/js/material-dashboard.min.js?v=2.1.1" rel="stylesheet"></script>
+
         @stack('js')
     </body>
 </html>

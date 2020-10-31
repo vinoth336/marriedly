@@ -313,27 +313,27 @@
                     </div>
                 </div>
                     <div class="row col-mb-50">
-                        <div class="col-sm-6 col-lg-3">
+                        <div class="col-sm-6 col-lg-3" style="cursor: pointer" onclick="window.open('https://goo.gl/maps/u86ebsZ7AeX54e7g9', '_blank')">
                             <div class="feature-box fbox-center fbox-bg fbox-plain">
                                 <div class="fbox-icon">
                                     <a href="#"><i class="icon-map-marker2"></i></a>
                                 </div>
-                                <div class="fbox-content">
+                                <div class="fbox-content" >
                                     <h3>Get Direction<span class="subtitle">Check In<br>Google Map</span></h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-lg-3">
+                        <div class="col-sm-6 col-lg-3" style="cursor: pointer" onclick="window.open('tel:+91{{ $siteInformation->phone_no }}', '_blank')">
                             <div class="feature-box fbox-center fbox-bg fbox-plain">
                                 <div class="fbox-icon">
-                                    <a href="#"><i class="icon-phone3"></i></a>
+                                    <a href=""><i class="icon-phone3"></i></a>
                                 </div>
                                 <div class="fbox-content">
-                                    <h3>Speak to<br> Us<span class="subtitle">(+91)9092780007</span></h3>
+                                    <h3>Speak to<br> Us<span class="subtitle"><a style="text-decoration: none;color:#000" href="tel:+91{{ $siteInformation->phone_no }}"> (+91) {{ $siteInformation->phone_no  }}</a></span></h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-lg-3">
+                        <div class="col-sm-6 col-lg-3" style="cursor: pointer" onclick="window.open('https://www.instagram.com/{{ $siteInformation->instagram_id }}/', '_blank')">
                             <div class="feature-box fbox-center fbox-bg fbox-plain">
                                 <div class="fbox-icon">
                                     <a href="#"><i class="icon-instagram"></i></a>
@@ -343,7 +343,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-lg-3">
+                        <div class="col-sm-6 col-lg-3" style="cursor: pointer" onclick="window.open('https://www.facebook.com/{{ $siteInformation->facebook_id }}', '_blank')">
                             <div class="feature-box fbox-center fbox-bg fbox-plain">
                                 <div class="fbox-icon">
                                     <a href="#"><i class="icon-facebook2"></i></a>

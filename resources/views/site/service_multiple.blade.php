@@ -12,28 +12,32 @@
         <div class="container clearfix">
             <div class="grid-filter-wrap">
 
-               
+
             </div>
         </div>
 
         <div id="portfolio" class="portfolio row grid-container gutter-20 has-init-isotope" data-layout="fitRows">
-            @for($i=1; $i<=12; $i++)    
+            @foreach($services as $service)
             <article class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-12 pf-media pf-icons">
                 <div class="grid-inner">
-                   
+
                     <div class="portfolio-image">
-                        <a href="{{ route('service', 'decor') }}">
-                            <img style="height:200px" src="{{  asset('web/images/banner/banner' . $i . '.jpg') }}" alt="Open Imagination">
+                        <a href="{{ route('service', $service->slug) }}">
+                            @if(file_exists(public_path('web/images/portfolio_images/thumbnails/' . $service->banner)))
+                            <img style="height:200px" src="{{ asset('web/images/portfolio_images/thumbnails/' . $service->banner ) }}" />
+                            @else
+                            <img style="height:200px" src="{{ asset('site_images/no-image.png') }}" />
+                            @endif
                         </a>
                     </div>
                     <div class="portfolio-desc">
-                        <h3><a href="{{ route('service', 'decor') }}">Car Decor</a></h3>
+                    <h3><a href="{{ route('service', $service->slug) }}">{{ ucwords($service->name) }}</a></h3>
                     </div>
                 </div>
             </article>
-          
-            @endfor    
-           
+
+            @endforeach
+
 
         </div>
     </div>

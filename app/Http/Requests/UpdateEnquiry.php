@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateServiceRequest extends FormRequest
+class UpdateEnquiry extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,11 +23,9 @@ class CreateServiceRequest extends FormRequest
      */
     public function rules()
     {
-        $id = $this->service->id ?? null;
         return [
-            'name' => "required|unique:services,slug,{$id},id",
-            'description' => 'required',
-            'banner' => 'image|nullable|mimes:jpeg,png,jpg,gif|max:2048'
+            'status' => 'required',
+            'comment' => 'required|max:500'
         ];
     }
 }

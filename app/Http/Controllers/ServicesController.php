@@ -171,6 +171,7 @@ class ServicesController extends Controller
         $image = $request->has('banner') ? $request->file('banner') : null;
         $service->storeImage($image, ['width' => 230 , 'height' => 230]);
         $service->name = $request->input('name');
+        $service->slug = str_slug($request->input('name'));
         $service->icon = $request->input('icon');
         $service->description = $request->input('description');
         $service->sequence = $service->sequence ?? Services::count() + 1;

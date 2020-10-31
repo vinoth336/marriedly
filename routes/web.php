@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'SiteController@index')->name('home');
-Route::get('/service/{service?}', 'SiteController@services')->name('service');
+Route::get('/service/{slug?}', 'SiteController@services')->name('service');
 Route::get('/portfolio/', 'SiteController@portfolio')->name('portfolio');
 Route::get('/faqs/', 'SiteController@faqs')->name('site_faqs');
 Route::post('enquiry', 'SaveEnquiryController@store')->name('enquiry.store');

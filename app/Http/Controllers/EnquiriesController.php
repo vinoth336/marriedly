@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Enquiries;
 use App\Http\Requests\EnquiryRequest;
+use App\Http\Requests\UpdateEnquiry;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -11,11 +12,18 @@ use Illuminate\Support\Facades\Log;
 
 class EnquiriesController extends Controller
 {
+    public $enquiry_status = [
+        'pending' => 'Pending',
+        'contact' => 'Contact',
+        'follow-up' => 'Follow Up',
+        'order-confirmed' => 'Order Confirmed',
+        'cancel' => 'Cancel',
+        'fake' => 'Fake'
+    ];
 
     public function __construct()
     {
         $this->middleware('auth')->except('store');
-
     }
 
     /**
@@ -23,11 +31,24 @@ class EnquiriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $enquiries = Enquiries::OrderBy('created_at')->get();
 
-        return view('enquiries.list', ['enquiries' => $enquiries]);
+
+        $enquiries = Enquiries::OrderBy('created_at');
+        if ($request->has('status')) {
+            if(!in_array($request->input('status'), ['All', 'all', ''])) {
+                $enquiries->where('status', $request->input('status'));
+            }
+        }
+
+        if ($request->input('from_date') && $request->input('to_date')) {
+            $startDate = date("Y-m-d", strtotime($request->input('from_date')));
+            $endDate   = date("Y-m-d", strtotime($request->input('to_date')));
+            $enquiries->whereBetween("created_at", array($startDate, $endDate));
+        }
+
+        return view('enquiries.list', ['enquiries' => $enquiries->get(), 'enquiry_status' => $this->enquiry_status]);
     }
 
     /**
@@ -50,7 +71,7 @@ class EnquiriesController extends Controller
     {
         DB::beginTransaction();
 
-        try{
+        try {
 
             Enquiries::create(
                 [
@@ -66,9 +87,8 @@ class EnquiriesController extends Controller
             DB::commit();
 
             return response(['status' => 'Updated Successfully'], 200);
-
-        } catch( Exception $e) {
-            Log::error('Enquiry Form Error ' . $e->getMessage() );
+        } catch (Exception $e) {
+            Log::error('Enquiry Form Error ' . $e->getMessage());
             DB::rollback();
 
             return response(['status' => 'Sorry Something Went Wrong'], 500);
@@ -81,9 +101,9 @@ class EnquiriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Enquiries $enquiries)
+    public function show(Enquiries $enquiry)
     {
-        //
+        return $enquiry;
     }
 
     /**
@@ -104,10 +124,13 @@ class EnquiriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Enquiries $enquiries)
+    public function update(UpdateEnquiry $request, Enquiries $enquiry)
     {
-        $enquiries->status = $request->input('status');
-        $enquiries->save();
+        $enquiry->status = $request->input('status');
+        $enquiry->comment = $request->input('comment');
+
+
+        $enquiry->save();
 
         return response(['message' => 'Updated Successfully'], 200);
     }

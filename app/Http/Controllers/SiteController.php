@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Faqs;
 use App\Portfolio;
 use App\PortfolioImage;
 use App\Services;
 use App\SiteInformation;
 use App\Slider;
 use App\Testimonial;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class SiteController extends Controller
 {
@@ -24,27 +27,49 @@ class SiteController extends Controller
         $sliders = Slider::orderBy('sequence')->get();
         $services = Services::orderBy('sequence');
         $awesomeWorks = PortfolioImage::where('show_in_home_page', 1)
-        ->orderBy('created_at', 'desc')->limit(12)->get();
+            ->orderBy('created_at', 'desc')->limit(12)->get();
         $testmonials = Testimonial::orderBy('created_at', 'desc')->get();
 
-        return view('site.home', ['siteInformation' => $siteInformation,
-        'sliders' => $sliders,
-        'services' => $services,
-        'awesomeWorks' => $awesomeWorks,
-        'testmonials' => $testmonials
+        return view('site.home', [
+            'siteInformation' => $siteInformation,
+            'sliders' => $sliders,
+            'services' => $services,
+            'awesomeWorks' => $awesomeWorks,
+            'testmonials' => $testmonials
         ]);
     }
 
-    public function services(Request $request, $service=null)
+    public function services(Request $request, $slug = null)
     {
         $siteInformation = SiteInformation::first();
-        if($service) {
-            return view('site.service_single', ['siteInformation' => $siteInformation]);
-        } else {
-            return view('site.service_multiple', ['siteInformation' => $siteInformation]);
+        $services = Services::orderBy('sequence')->get();
+
+        try {
+
+
+            if ($slug) {
+
+                $service = Services::where('slug', $slug)->first();
+
+                if ($service) {
+
+                    return view('site.service_single', [
+                        'siteInformation' => $siteInformation,
+                        'service' => $service
+                    ]);
+                } else {
+                    throw new ModelNotFoundException();
+                }
+            } else {
+                return view('site.service_multiple', [
+                    'siteInformation' => $siteInformation,
+                    'services' => $services
+                ]);
+            }
+        } catch (ModelNotFoundException $e) {
+            Log::error($e->getMessage());
+            return response(['status' => "Service Not Found"], 404);
         }
-
-
     }
 
     public function portfolio()
@@ -54,32 +79,32 @@ class SiteController extends Controller
         $portfolio = Portfolio::orderBy('sequence')->get();
         $portfolioImages = PortfolioImage::get();
 
-        return view('site.portfolio',
-        ['portfolio' => $portfolio,
-        'portfolioImages' => $portfolioImages,
-        'siteInformation' => $siteInformation
-        ]);
+        return view(
+            'site.portfolio',
+            [
+                'portfolio' => $portfolio,
+                'portfolioImages' => $portfolioImages,
+                'siteInformation' => $siteInformation
+            ]
+        );
     }
 
     public function testimonial()
     {
-
     }
 
     public function howWeWork()
     {
-
     }
 
     public function faqs()
     {
         $siteInformation = SiteInformation::first();
-
-        return view('site.faqs', ['siteInformation' => $siteInformation]);
+        $faqs = Faqs::orderBy('sequence')->get();
+        return view('site.faqs', ['siteInformation' => $siteInformation, 'faqs' => $faqs]);
     }
 
     public function saveEnquiry()
     {
-
     }
 }

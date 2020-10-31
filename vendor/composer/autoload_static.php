@@ -34,6 +34,7 @@ class ComposerStaticInitf3b2714cf71ef5b5bc9a9f113bb2d005
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
+        '17d016dc52a631c1e74d2eb8fdd57342' => __DIR__ . '/..' . '/laravel/helpers/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -540,6 +541,8 @@ class ComposerStaticInitf3b2714cf71ef5b5bc9a9f113bb2d005
         'App\\Http\\Controllers\\EnquiriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/EnquiriesController.php',
         'App\\Http\\Controllers\\FaqsController' => __DIR__ . '/../..' . '/app/Http/Controllers/FaqsController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\PortfolioController' => __DIR__ . '/../..' . '/app/Http/Controllers/PortfolioController.php',
+        'App\\Http\\Controllers\\PortfolioImageController' => __DIR__ . '/../..' . '/app/Http/Controllers/PortfolioImageController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
         'App\\Http\\Controllers\\SaveEnquiryController' => __DIR__ . '/../..' . '/app/Http/Controllers/SaveEnquiryController.php',
         'App\\Http\\Controllers\\ServicesController' => __DIR__ . '/../..' . '/app/Http/Controllers/ServicesController.php',
@@ -564,6 +567,8 @@ class ComposerStaticInitf3b2714cf71ef5b5bc9a9f113bb2d005
         'App\\Http\\Requests\\ProfileRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProfileRequest.php',
         'App\\Http\\Requests\\SliderRequest' => __DIR__ . '/../..' . '/app/Http/Requests/SliderRequest.php',
         'App\\Http\\Requests\\UserRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UserRequest.php',
+        'App\\Portfolio' => __DIR__ . '/../..' . '/app/Portfolio.php',
+        'App\\PortfolioImage' => __DIR__ . '/../..' . '/app/PortfolioImage.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -574,6 +579,7 @@ class ComposerStaticInitf3b2714cf71ef5b5bc9a9f113bb2d005
         'App\\SiteInformation' => __DIR__ . '/../..' . '/app/SiteInformation.php',
         'App\\Slider' => __DIR__ . '/../..' . '/app/Slider.php',
         'App\\Testimonial' => __DIR__ . '/../..' . '/app/Testimonial.php',
+        'App\\Traits\\StoreImage' => __DIR__ . '/../..' . '/app/Traits/StoreImage.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Cors.php',

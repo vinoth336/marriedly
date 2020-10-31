@@ -13,4 +13,10 @@ class Enquiries extends Model
 
     protected $fillable = ['name', 'phone_no', 'email', 'subject', 'message', 'status'];
 
+
+    public function getCreatedAtAttribute($value)
+    {
+        return date('Y-m-d H:i', strtotime($value));
+    }
+
 }

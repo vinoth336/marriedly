@@ -42,27 +42,6 @@
                             </div>
 
                         </div>
-                        {{-- <div
-                            class="w-100 mb-5 portfolio-single-image masonry-thumbs grid-container grid-3" data-big="3"
-                            data-lightbox="gallery">
-                            @foreach ($portfolioImages as $portfolioImage)
-                                <a class="grid-item"
-                                    href="{{ asset('web/images/portfolio_images/' . $portfolioImage->image) }}"
-                                    data-lightbox="gallery-item">
-                                    <div class="grid-inner">
-                                        <img src="{{ asset('web/images/portfolio_images/thumbnails/' . $portfolioImage->image) }}"
-                                            alt="{{ $portfolioImage->name }}">
-                                        <div class="bg-overlay">
-                                            <div class="bg-overlay-content dark">
-                                                <span class="overlay-trigger-icon bg-light text-dark"
-                                                    data-hover-animate="zoomIn" data-hover-animate-out="zoomOut"
-                                                    data-hover-speed="400"><i class="icon-line-play"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            @endforeach
-                        </div> --}}
                     </section>
                 </div>
             </div>
