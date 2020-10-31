@@ -64,12 +64,12 @@
                         <div class="col-sm-6 col-lg-4">
                             <div class="feature-box fbox-sm fbox-plain">
                                 <div class="fbox-icon">
-                                    <a href="{{ route('service', $service->name) }}">
+                                    <a href="{{ route('service', $service->slug) }}">
                                         <i class="{{ $service->icon }}"></i></a>
                                 </div>
                                 <div class="fbox-content">
-                                    <a href="{{ route('service', $service->name) }}">
-                                        <h3>{{ ucwords($service->name) }}</h3>
+                                    <a href="{{ route('service', $service->slug) }}">
+                                        <h3>{{ ucwords($service->slug) }}</h3>
                                     </a>
                                     <p>{{ substr($service->description, 0, 100) }}... </p>
                                     <br>
@@ -107,12 +107,12 @@
                             <div class="col-sm-6 col-lg-4">
                                 <div class="feature-box fbox-sm fbox-plain">
                                     <div class="fbox-icon">
-                                        <a href="{{ route('service', $service->name) }}">
+                                        <a href="{{ route('service', $service->slug) }}">
                                             <i class="{{ $service->icon }}"></i></a>
                                     </div>
                                     <div class="fbox-content">
-                                        <a href="{{ route('service', $service->name) }}">
-                                            <h3>{{ ucwords($service->name) }}</h3>
+                                        <a href="{{ route('service', $service->slug) }}">
+                                            <h3>{{ ucwords($service->slug) }}</h3>
                                         </a>
                                         <p>{{ substr($service->description, 0, 100) }}...</p>
                                         <br>
