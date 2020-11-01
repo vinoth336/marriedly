@@ -283,7 +283,9 @@
                         </div>
                         <!-- Enquiry Form Start Here -->
 
-                        <?php $enquiry_form_class = 'col-md-4'; ?>
+                        <?php $enquiry_form_class = 'col-md-4';
+                              $services = $servicesForEnquiries;
+                        ?>
                         @include('site.enquiry_form', ['enquiry_form_class' => $enquiry_form_class] )
 
                         <!-- Enquiry Form Ended Here -->

@@ -26,6 +26,8 @@ class SiteController extends Controller
         $siteInformation = SiteInformation::first();
         $sliders = Slider::orderBy('sequence')->get();
         $services = Services::orderBy('sequence');
+        $servicesForEnquiries = Services::orderBy('sequence')->get();
+
         $awesomeWorks = PortfolioImage::where('show_in_home_page', 1)
             ->orderBy('created_at', 'desc')->limit(12)->get();
         $testmonials = Testimonial::orderBy('created_at', 'desc')->get();
@@ -35,7 +37,8 @@ class SiteController extends Controller
             'sliders' => $sliders,
             'services' => $services,
             'awesomeWorks' => $awesomeWorks,
-            'testmonials' => $testmonials
+            'testmonials' => $testmonials,
+            'servicesForEnquiries' => $servicesForEnquiries
         ]);
     }
 
