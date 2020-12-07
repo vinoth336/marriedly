@@ -45,6 +45,7 @@ return array(
     'App\\Http\\Requests\\PasswordRequest' => $baseDir . '/app/Http/Requests/PasswordRequest.php',
     'App\\Http\\Requests\\ProfileRequest' => $baseDir . '/app/Http/Requests/ProfileRequest.php',
     'App\\Http\\Requests\\SliderRequest' => $baseDir . '/app/Http/Requests/SliderRequest.php',
+    'App\\Http\\Requests\\UpdateEnquiry' => $baseDir . '/app/Http/Requests/UpdateEnquiry.php',
     'App\\Http\\Requests\\UserRequest' => $baseDir . '/app/Http/Requests/UserRequest.php',
     'App\\Portfolio' => $baseDir . '/app/Portfolio.php',
     'App\\PortfolioImage' => $baseDir . '/app/PortfolioImage.php',

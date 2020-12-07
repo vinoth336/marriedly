@@ -566,6 +566,7 @@ class ComposerStaticInitf3b2714cf71ef5b5bc9a9f113bb2d005
         'App\\Http\\Requests\\PasswordRequest' => __DIR__ . '/../..' . '/app/Http/Requests/PasswordRequest.php',
         'App\\Http\\Requests\\ProfileRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProfileRequest.php',
         'App\\Http\\Requests\\SliderRequest' => __DIR__ . '/../..' . '/app/Http/Requests/SliderRequest.php',
+        'App\\Http\\Requests\\UpdateEnquiry' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateEnquiry.php',
         'App\\Http\\Requests\\UserRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UserRequest.php',
         'App\\Portfolio' => __DIR__ . '/../..' . '/app/Portfolio.php',
         'App\\PortfolioImage' => __DIR__ . '/../..' . '/app/PortfolioImage.php',
